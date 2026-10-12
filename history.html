@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi Pembelian - Nissan</title>
+<link rel="icon" type="image/png" href="assets/nissan.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+        integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark-theme-body">
+
+    <!-- form section konsultasi pembelian-->
+    <section class="purchase-consult-section">
+        <div class="consult-container">
+            <div class="consult-process-header">
+                <h2>KONSULTASI PEMBELIAN</h2>
+                
+                <div class="process-steps-grid">
+                    <div class="step-item">
+                        <div class="step-icon"><i class="ri-car-fill"></i></div>
+                        <p><strong>1. INFOKAN PERMINTAAN ANDA</strong>Masukkan data pribadi Anda serta mobil Nissan yang Anda inginkan</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="ri-phone-fill"></i></div>
+                        <p><strong>2. SALES EXECUTIVE KAMI AKAN MENHUBUNGI ANDA</strong>Untuk memberikan konsultasi pembelian mobil Nissan Anda</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="ri-file-text-fill"></i></div>
+                        <p><strong>3. MENERIMA PENAWARAN</strong>Dapatkan penawaran terbaik yang dikirimkan oleh dealer yang sudah Anda pilih sebelumnya</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="ri-shake-hands-fill"></i></div>
+                        <p><strong>4. BERGABUNG MENJADI KELUARGA NISSAN</strong>Dapatkan keuntungan menarik karena telah menjadi keluarga besar</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM UTAMA -->
+            <form class="consult-main-form" onsubmit="event.preventDefault();">
+                
+                <!-- kolom kiri -->
+                <div class="form-guide-left">
+                    <div class="guide-block block-1">
+                        <h3>1. PILIH MOBIL</h3>
+                        <p>Tentukan pilihan model Nissan yang ingin diuji coba.</p>
+                    </div>
+                    
+                    <div class="guide-block block-2">
+                        <h3>2. INFORMASI DATA DIRI</h3>
+                        <p>Kami memerlukan informasi ini untuk menghubungi anda.</p>
+                    </div>
+                    
+                    <div class="guide-block block-3">
+                        <h3>3. PILIH DEALER</h3>
+                        <p>Silahkan pilih daerah dan dealer yang ingin menghubungi anda.</p>
+                    </div>
+                </div>
+
+                <!-- kolam kanan -->
+                <div class="form-fields-right">
+                    
+                    <!-- Area Bagian 1 -->
+                    <div class="field-group">
+                        <label>Kebutuhan <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih salah satu kebutuhan</option>
+                            <option value="test-drive">Test Drive</option>
+                            <option value="brosur">Permintaan Brosur</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Info yang dibutuhkan <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih info yang dibutuhkan</option>
+                            <option value="harga">Daftar Harga & Kredit</option>
+                            <option value="spesifikasi">Spesifikasi Detail</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Rencana pembelian <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih Rencana pembelian</option>
+                            <option value="secepatnya">Bulan Ini</option>
+                            <option value="3-bulan">3 Bulan Kedepan</option>
+                        </select>
+                    </div>
+
+                    <!-- Area Bagian 2 -->
+                    <div class="field-group">
+                        <label>Nama Lengkap <span>*</span></label>
+                        <input type="text" required placeholder="Masukkan nama lengkap Anda">
+                    </div>
+
+                    <div class="field-group">
+                        <label>Nomor Telepon / Handphone <span>*</span></label>
+                        <input type="tel" required placeholder="Contoh: 08123456789">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="wa-check">
+                        <label for="wa-check">Apakah nomor ini memiliki WA ?</label>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Nama Perusahaan</label>
+                        <input type="text" placeholder="Masukkan nama perusahaan (opsional)">
+                    </div>
+
+                    <div class="field-group">
+                        <label>Industri Perusahaan <span>*</span></label>
+                        <input type="text" required placeholder="Contoh: Otomotif, Finansial, dll">
+                    </div>
+
+                    <div class="field-group">
+                        <label>Kota <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih Kota</option>
+                            <option value="jakarta">Jakarta</option>
+                            <option value="bandung">Bandung</option>
+                            <option value="surabaya">Surabaya</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label>E-mail <span>*</span></label>
+                        <input type="email" required placeholder="Masukkan email anda">
+                    </div>
+
+                    <div class="field-group">
+                        <label>Model yang diinginkan <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih model yang diinginkan</option>
+                            <option value="livina-ve">Nissan Livina VE AT</option>
+                            <option value="livina-vl">Nissan Livina VL AT</option>
+                        </select>
+                    </div>
+
+                    <!-- Area Bagian 3 -->
+                    <div class="field-group">
+                        <label>Dealer Terdekat <span>*</span></label>
+                        <select required>
+                            <option value="" disabled selected>Pilih dealer terdekat</option>
+                            <option value="dealer-1">Nissan Gate Jakarta</option>
+                            <option value="dealer-2">Nissan Gate Bandung</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group privacy-check">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">Dengan mengirim form ini saya bersedia dihubungi oleh Nissan Indonesia *</label>
+                    </div>
+
+                    <!-- tombol buat submit nya -->
+                    <button type="submit" class="btn-submit-consult">KIRIM DATA</button>
+                    <span class="required-note"><span>*</span> Wajib Diisi</span>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</body>
+</html>

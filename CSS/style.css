@@ -1,0 +1,2128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #ffffff;
+    scroll-behavior: smooth;
+}
+
+html.nav-open {
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+.main-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%; 
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px 15px 40px; 
+    height: 90px;
+}
+
+/* Ukuran Logo SVG Baru */
+.Navbar_logo-container__KEkjA {
+    display: inline-block;
+    width: 65px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.Navbar_desktop__d0Bnt {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 50px; 
+    margin-left: auto;
+    padding-right: 60px;
+    position: static;
+    transform: none;
+    left: auto;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: color 0.5s ease;
+}
+
+.nav-menu a:hover {
+    color: #777777;
+}
+
+.hamburger-placeholder {
+    width: 65px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+/* hamburger (991px) */
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tirai gelap di belakang drawer menu */
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 998;
+}
+
+.nav-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- SECTION 1 --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px);
+    height: calc(100dvh - 90px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; 
+}
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.4) 0%, 
+                rgba(0, 0, 0, 0.1) 50%, 
+                rgba(0, 0, 0, 0.5) 100%);
+    z-index: 2; 
+}
+.hero-content {
+    position: relative;
+    z-index: 3; 
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-discover {
+    display: inline-block;
+    padding: 12px 35px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-discover:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* --- TOMBOL KONTROL SUARA --- */
+.audio-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    z-index: 5; 
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    padding: 10px 18px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+.audio-btn.active {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/* --- SECTION 2: ABOUT US (NISSAN LAYERED STYLE) --- */
+.about-layered {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    height: 100dvh;
+    background-color: #0b1523; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-main-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-main-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%) contrast(110%);
+}
+
+.center-shadow-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 80%);
+    z-index: 2;
+}
+
+.circle-mask {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%; 
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.circle-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Posisi Lingkaran Kiri (Keluar layar setengah layaknya contoh) */
+.mask-left {
+    left: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Posisi Lingkaran Kanan (Keluar layar setengah layaknya contoh) */
+.mask-right {
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 3. Dekorasi Awan Melayang Menutupi Lingkaran Mobil */
+.cloud-decor {
+    position: absolute;
+    z-index: 4; /* Ditaruh di atas lingkaran agar efek menimpa awannya dapet */
+    pointer-events: none;
+    opacity: 0.85;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+}
+
+.cloud-decor img {
+    width: 100%;
+    height: auto;
+}
+
+/* Awan Kiri Bawah */
+.cloud-1 {
+    width: 280px;
+    left: 80px;
+    bottom: 50px;
+}
+
+/* Awan Kanan Atas */
+.cloud-2 {
+    width: 320px;
+    right: 80px;
+    top: 40px;
+}
+
+/* 4. Blok Teks Deskripsi Mobil di Tengah Halaman */
+.layered-content {
+    position: relative;
+    z-index: 5; /* Paling depan sendiri agar tidak tertutup awan/lingkaran */
+    max-width: 650px;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.layered-tag {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 15px;
+     font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+.layered-content h2 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+     font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+.layered-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    font-weight: 400;
+       font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+.layered-content .desc-2 {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    font-weight: 400;
+       font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+/* --- SECTION 3: MODELS (SPLIT INTERIOR & EXTERIOR) --- */
+.models-split-section {
+    display: flex;
+    width: 100%;
+    height: 100vh; 
+    height: 100dvh;
+    min-height: 600px;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.split-panel {
+    position: relative;
+    flex: 1; 
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+    overflow: hidden;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* Gambar Latar Belakang di Dalam Panel */
+.panel-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.panel-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: brightness(65%) grayscale(20%); 
+}
+
+.panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.panel-content {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    max-width: 450px;
+    transform: translateY(20px); /* Teks naik sedikit saat panel aktif */
+    transition: transform 0.5s ease;
+   font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+.panel-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #ffffff; 
+    display: block;
+    margin-bottom: 10px;
+   font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif
+}
+
+.panel-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.panel-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #dddddd;
+    margin-bottom: 25px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    font-family: Nissan Bold,Nissan Regular,Verdana,Arial,sans-serif;
+}
+
+/* Tombol Eksplorasi Minimalis */
+.btn-panel-explore {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.split-panel:hover {
+    flex: 6; 
+}
+.split-panel:hover .panel-bg-image img {
+    filter: brightness(85%) grayscale(0%);
+    transform: scale(1.02);
+}
+
+.split-panel:hover .panel-content {
+    transform: translateY(0);
+}
+
+.split-panel:hover .btn-panel-explore {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* INNOVATIONS */
+.innovations-cinematic {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    height: 100dvh;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: flex-start; 
+    padding: 100px 80px 180px 80px; 
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+
+.cinematic-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cinematic-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(45%) grayscale(100%);
+}
+
+
+.cinematic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.4) 50%, 
+                transparent 100%);
+    z-index: 2;
+}
+
+.cinematic-content-block {
+    position: relative;
+    z-index: 3; 
+    max-width: 750px; 
+    color: #ffffff;
+    margin-bottom: 40px; 
+}
+
+
+.cinematic-content-block h2 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+.cinematic-text-flow p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #cccccc; 
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.cinematic-text-flow .cinematic-sub {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* end innovetions */
+
+/* ---  SPECIFICATIONS --- */
+.nissan-spec-dark-section {
+    width: 100%;
+    min-height: 100vh; 
+    min-height: 100dvh;
+    background-color: #000000; 
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    margin: 0;
+    border-top: 1px solid #111111;
+}
+
+.spec-dark-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-dark-top-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.spec-dark-car-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spec-dark-car-visual img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.dark-img-note {
+    font-size: 11px;
+    color: #555555;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.spec-dark-price-info h2 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.dark-price-label {
+    font-size: 12px;
+    color: #888888;
+    display: block;
+}
+
+.dark-price-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.dark-price-note {
+    font-size: 11px;
+    color: #555555;
+    display: block;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.spec-dark-quick-equipment h3, .ov-dark-middle h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.spec-dark-quick-equipment ul, .ov-dark-middle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-dark-quick-equipment li, .ov-dark-middle li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #bbbbbb;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.spec-dark-quick-equipment li::before, .ov-dark-middle li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #888888;
+}
+
+
+/* --- PART B: BAR NAVIGASI TAB MODUL GELAP --- */
+.spec-dark-tabs-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid #222222;
+    margin-bottom: 30px;
+}
+
+.tab-dark-btn {
+    background: transparent;
+    border: none;
+    padding: 20px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555; 
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.tab-dark-btn.active {
+    color: #ffffff; 
+}
+
+.tab-dark-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff; 
+}
+
+
+/* --- PART C: KONTEN AREA TAB PANEL --- */
+.tab-dark-panel {
+    display: none;
+    background-color: #0a0a0a; 
+    padding: 40px;
+    border: 1px solid #151515;
+}
+
+.tab-dark-panel.active {
+    display: block;
+}
+
+.overview-dark-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.ov-dark-label {
+    font-size: 12px;
+    color: #666666;
+}
+
+.ov-dark-price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.ov-dark-link {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: underline;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.ov-dark-link:hover {
+    color: #cccccc;
+}
+
+/* Modul Mesin Dark */
+.engine-dark-badge {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #000000;
+    padding: 15px 20px;
+    border: 1px solid #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.badge-dark-icon {
+    font-size: 20px;
+}
+
+.badge-dark-text {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.small-dark-text {
+    font-size: 11px;
+    color: #888888;
+    font-weight: 400;
+}
+
+/* Gaya Tabel Spek Teknis */
+.technical-dark-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-dark-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 14px;
+}
+
+.table-dark-row:last-child {
+    border-bottom: none;
+}
+
+.table-dark-row span {
+    color: #888888;
+}
+
+.table-dark-row strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* saya ingin */
+.action-shortcuts-section {
+    width: 100%;
+    background-color: #ffffff; 
+    padding: 90px 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eeeeee;
+}
+
+.shortcut-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.shortcut-header {
+    margin-bottom: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shortcut-header h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #444444;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+.shortcut-header h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0px;
+}
+.shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+}
+.shortcut-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.shortcut-item:hover {
+    transform: translateY(-6px); 
+}
+
+.shortcut-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #000000; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: background-color 0.3s ease;
+}
+
+.shortcut-icon-circle svg {
+    width: 22px;
+    height: 22px;
+}
+.shortcut-item:hover .shortcut-icon-circle {
+    background-color: #333333;
+}
+
+.shortcut-item span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.main-corporate-footer {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 70px 40px 40px 40px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #111111;
+}
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.footer-breadcrumb {
+    font-size: 11px;
+    color: #555555;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+}
+
+.footer-breadcrumb a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.footer-breadcrumb a:hover {
+    color: #ffffff;
+}
+
+.footer-breadcrumb span {
+    color: #888888;
+}
+.footer-sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 60px;
+    margin-bottom: 35px;
+}
+
+.sitemap-column h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.sitemap-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sitemap-column li {
+    margin-bottom: 14px;
+}
+
+.sitemap-column a {
+    font-size: 12px;
+    color: #777777; 
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sitemap-column a:hover {
+    color: #ffffff;
+}
+.footer-social-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    transition: 0.5s ease;
+}
+
+.social-circle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #161616; 
+    color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.5s ease, color 0.5s ease;
+}
+
+.social-circle-btn i {
+    font-size: 18px;
+    display: inline-block;
+    line-height: 1;
+    transition: 0.5s ease;
+}
+
+.social-circle-btn:hover {
+    background-color: #ffffff;
+    transition: 0.5s ease;
+}
+
+.social-circle-btn:hover i {
+    color: #000000 !important;
+    transition: 0.5s ease;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bottom-legal-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.bottom-legal-links a {
+    font-size: 11px;
+    color: #444444;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.bottom-legal-links a:hover {
+    color: #888888;
+}
+
+.bottom-legal-links .legal-notice {
+    color: #444444;
+    cursor: default;
+}
+
+.bottom-copyright {
+    font-size: 11px;
+    color: #444444;
+    letter-spacing: 0.5px;
+}
+
+/* --- NEW HTML: contact ataw Konsultasi pembelian --- */
+.dark-theme-body {
+    background-color: #000000; 
+    color: #ffffff;
+}
+
+.purchase-consult-section { 
+    gap: 180px;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #ffffff; 
+    color: #000000;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.consult-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.consult-process-header {
+    text-align: center;
+    margin-bottom: 70px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 40px;
+}
+.consult-process-header h2 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #111111;
+    margin-bottom: 45px;
+}
+.process-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.step-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+.step-icon {
+    font-size: 24px;
+    color: #000000;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+.step-item p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #666666;
+}
+
+.step-item strong {
+    display: block;
+    font-size: 11px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.consult-main-form {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr; 
+    gap: 80px;
+    align-items: flex-start;
+}
+.form-guide-left {
+    display: flex;
+    flex-direction: column;
+    gap: 180px; 
+    padding-top: 10px;
+}
+
+.guide-block h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.guide-block p {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.4;
+}
+.form-fields-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.field-group span {
+    color: red;
+}
+.field-group input,
+.field-group select {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    color: #000000;
+    font-size: 13px;
+    outline: none;
+    border-radius: 0px; 
+    transition: border-color 0.2s ease;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+    border-color: #000000; 
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #000000;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 12px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.privacy-check {
+    margin-top: 15px;
+    align-items: flex-start;
+}
+
+.privacy-check label {
+    line-height: 1.4;
+}
+
+/* Tombol Submit Blok Hitam Solid Kontras Tinggi */
+.btn-submit-consult {
+    width: 100%;
+    padding: 16px 0;
+    background-color: #000000; /* JADI HITAM PEKAT TOTAL */
+    color: #ffffff;
+    border: 1px solid #000000;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.btn-submit-consult:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.required-note {
+    font-size: 11px;
+    color: #888888;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.nav-menu a.active {
+    color: #000000;
+    font-weight: 700;
+}
+
+
+/* BREAKPOINTS
+   1. 1200px = layar desktop (monitor kecil / laptop)
+   2.  991px = tablet landscape
+   3.  768px = tablet portrait
+   4.  617px = HP ukuran besar
+   5.  450px = HP ukuran standar
+   6.  356px = HP ukuran kecil */
+
+
+/* ---------- 0. LAYAR SENTUH: matikan efek hover yang mengubah layout ---------- */
+@media (hover: none) {
+    .split-panel:hover {
+        flex: 1;
+    }
+    .split-panel:hover .panel-bg-image img {
+        transform: none;
+        filter: brightness(70%) grayscale(10%);
+    }
+    .split-panel:hover .panel-content {
+        transform: none;
+    }
+    .split-panel:hover .btn-panel-explore {
+        background-color: transparent;
+        color: #ffffff;
+    }
+    .shortcut-item:hover {
+        transform: none;
+    }
+    .shortcut-item:hover .shortcut-icon-circle {
+        background-color: #000000;
+    }
+}
+
+
+/* 1200px*/
+@media (max-width: 1200px) {
+    .nav-menu {
+        gap: 32px;
+        padding-right: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        letter-spacing: 3px;
+    }
+
+    .circle-mask {
+        width: 400px;
+        height: 400px;
+    }
+    .mask-left {
+        left: -130px;
+    }
+    .mask-right {
+        right: -130px;
+    }
+    .cloud-1 {
+        width: 240px;
+        left: 50px;
+    }
+    .cloud-2 {
+        width: 270px;
+        right: 50px;
+    }
+
+    .split-panel {
+        padding: 50px;
+    }
+    .panel-content h2 {
+        font-size: 42px;
+    }
+
+    .innovations-cinematic {
+        padding: 90px 60px 150px;
+    }
+    .cinematic-content-block h2 {
+        font-size: 44px;
+    }
+
+    .nissan-spec-dark-section {
+        padding: 70px 30px;
+    }
+    .spec-dark-top-block,
+    .overview-dark-grid {
+        gap: 30px;
+    }
+
+    .action-shortcuts-section {
+        padding: 80px 30px;
+    }
+    .shortcut-grid {
+        gap: 30px;
+    }
+
+    .main-corporate-footer {
+        padding: 60px 30px 36px;
+    }
+    .footer-sitemap-grid {
+        gap: 30px;
+    }
+
+    .purchase-consult-section {
+        padding: 70px 30px;
+    }
+    .consult-main-form {
+        gap: 55px;
+    }
+}
+/* end 1200px */
+
+
+/* 991px */
+@media (max-width: 991px) {
+    .nav-container {
+        padding: 12px 24px;
+        height: 76px;
+    }
+    .hamburger-placeholder {
+        width: auto;
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 0 10px;
+        background: transparent;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(320px, 84vw);
+        height: 100vh;
+        height: 100dvh;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin: 0;
+        padding: 96px 28px 32px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        box-shadow: -12px 0 40px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+    }
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+    .nav-menu li {
+        border-bottom: 1px solid #eeeeee;
+    }
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    .nav-menu a {
+        display: block;
+        padding: 17px 0;
+    }
+    section[id] {
+        scroll-margin-top: 76px;
+    }
+
+    .hero-section {
+        height: calc(100vh - 76px);
+        height: calc(100dvh - 76px);
+    }
+    .hero-content h1 {
+        font-size: 42px;
+        letter-spacing: 2.5px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .about-layered {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        flex-direction: column;
+        padding: 70px 24px;
+    }
+    .layered-content {
+        order: -1;
+        max-width: 620px;
+        margin-bottom: 34px;
+    }
+    .circle-mask {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto 22px;
+        left: auto;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+    .cloud-decor {
+        display: none;
+    }
+    .layered-tag {
+        font-size: 22px;
+    }
+    .layered-content h2 {
+        font-size: 32px;
+        margin-bottom: 22px;
+    }
+
+    .split-panel {
+        padding: 40px;
+    }
+    .panel-content h2 {
+        font-size: 38px;
+    }
+
+    .innovations-cinematic {
+        padding: 80px 40px 120px;
+    }
+    .cinematic-content-block {
+        max-width: 640px;
+    }
+    .cinematic-content-block h2 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+    .nissan-spec-dark-section {
+        padding: 65px 24px;
+    }
+    .spec-dark-top-block {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-bottom: 45px;
+    }
+    .spec-dark-car-visual {
+        grid-column: 1 / -1;
+    }
+    .overview-dark-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+    .ov-dark-middle {
+        grid-column: 1 / -1;
+        order: 3;
+    }
+
+    .action-shortcuts-section {
+        padding: 75px 24px;
+    }
+    .shortcut-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 34px;
+    }
+
+    .main-corporate-footer {
+        padding: 55px 24px 32px;
+    }
+    .footer-sitemap-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 34px;
+    }
+
+    .purchase-consult-section {
+        padding: 60px 24px;
+    }
+    .process-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+    .consult-main-form {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .form-guide-left {
+        gap: 26px;
+        padding-top: 0;
+    }
+}
+/* end 991px */
+
+
+/* 768px */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+    .hero-content p {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        margin-bottom: 30px;
+    }
+    .audio-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 9px 14px;
+        font-size: 14px;
+    }
+
+    .about-layered {
+        padding: 60px 22px;
+    }
+    .layered-content h2 {
+        font-size: 28px;
+    }
+    .layered-content p,
+    .layered-content .desc-2 {
+        font-size: 13px;
+    }
+    .models-split-section {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+    .split-panel {
+        flex: none;
+        min-height: 62vh;
+        padding: 36px 26px;
+    }
+    .split-panel:hover {
+        flex: none;
+    }
+    .panel-content {
+        transform: none; 
+        max-width: 100%;
+    }
+    .panel-content h2 {
+        font-size: 34px;
+    }
+
+    .innovations-cinematic {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 70px 24px 80px;
+    }
+    .cinematic-content-block {
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    .cinematic-content-block h2 {
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+    .cinematic-text-flow p,
+    .cinematic-text-flow .cinematic-sub {
+        font-size: 14px;
+        line-height: 1.75;
+        text-align: left; /* justify di layar sempit bikin jarak antar kata bolong-bolong */
+    }
+
+    .spec-dark-top-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .overview-dark-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .ov-dark-middle {
+        grid-column: auto;
+        order: 0;
+    }
+    .tab-dark-panel {
+        padding: 30px 24px;
+    }
+
+    .action-shortcuts-section {
+        padding: 65px 22px;
+    }
+    .shortcut-header {
+        margin-bottom: 40px;
+    }
+    .shortcut-header h2 {
+        font-size: 19px;
+    }
+    .shortcut-header h3 {
+        font-size: 23px;
+    }
+
+    .main-corporate-footer {
+        padding: 48px 22px 28px;
+    }
+    .footer-breadcrumb {
+        margin-bottom: 38px;
+    }
+    .footer-sitemap-grid {
+        padding-bottom: 44px;
+        margin-bottom: 28px;
+    }
+
+    .purchase-consult-section {
+        padding: 55px 22px;
+    }
+    .consult-process-header {
+        margin-bottom: 50px;
+        padding-bottom: 32px;
+    }
+    .consult-process-header h2 {
+        font-size: 26px;
+        margin-bottom: 34px;
+    }
+    .process-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    /* 16px = biar g ngezoom*/
+    .field-group input,
+    .field-group select {
+        font-size: 16px;
+        padding: 13px 14px;
+    }
+}
+/* end 768px */
+
+
+/* 617px */
+@media (max-width: 617px) {
+    .nav-container {
+        padding: 10px 18px;
+        height: 66px;
+    }
+    .Navbar_logo-container__KEkjA {
+        width: 52px;
+    }
+    .nav-menu {
+        padding: 88px 24px 28px;
+    }
+    section[id] {
+        scroll-margin-top: 66px;
+    }
+
+    .hero-section {
+        height: calc(100vh - 66px);
+        height: calc(100dvh - 66px);
+        min-height: 460px;
+    }
+    .hero-content {
+        padding: 0 18px;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+    }
+    .hero-content p {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 26px;
+    }
+    .btn-discover {
+        padding: 11px 26px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .about-layered {
+        padding: 55px 18px;
+    }
+    .layered-tag {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .layered-content {
+        margin-bottom: 28px;
+    }
+    .layered-content h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+    .circle-mask {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 18px;
+    }
+
+    .split-panel {
+        min-height: 58vh;
+        padding: 30px 20px;
+    }
+    .panel-content h2 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+    .panel-content p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .innovations-cinematic {
+        padding: 60px 20px 65px;
+    }
+    .cinematic-content-block h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .cinematic-text-flow p,
+    .cinematic-text-flow .cinematic-sub {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .nissan-spec-dark-section {
+        padding: 55px 18px;
+    }
+    .spec-dark-price-info h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    .dark-price-value {
+        font-size: 24px;
+    }
+    .tab-dark-btn {
+        padding: 16px 4px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+    .tab-dark-panel {
+        padding: 26px 20px;
+    }
+    .table-dark-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 14px 0;
+        font-size: 13px;
+    }
+    .engine-dark-badge {
+        gap: 14px;
+        padding: 14px 16px;
+    }
+    .badge-dark-text {
+        font-size: 13px;
+    }
+
+    .action-shortcuts-section {
+        padding: 55px 18px;
+    }
+    .shortcut-grid {
+        gap: 30px 16px;
+        margin-top: 24px;
+    }
+    .shortcut-icon-circle {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 18px;
+    }
+    .shortcut-item span {
+        font-size: 10px;
+    }
+
+    .main-corporate-footer {
+        padding: 42px 18px 26px;
+    }
+    .footer-sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 38px;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    .bottom-legal-links {
+        gap: 16px;
+    }
+
+    .purchase-consult-section {
+        padding: 48px 18px;
+    }
+    .consult-process-header h2 {
+        font-size: 22px;
+    }
+    .consult-main-form {
+        gap: 36px;
+    }
+    .form-fields-right {
+        gap: 22px;
+    }
+    .btn-submit-consult {
+        padding: 15px 0;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+}
+/* end 617px */
+
+
+/* 450px */
+@media (max-width: 450px) {
+    .hero-content h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .about-layered {
+        padding: 48px 16px;
+    }
+    .layered-content h2 {
+        font-size: 21px;
+    }
+    .layered-content p,
+    .layered-content .desc-2 {
+        font-size: 12px;
+    }
+    .circle-mask {
+        width: 220px;
+        height: 220px;
+    }
+
+    .split-panel {
+        min-height: 54vh;
+    }
+    .panel-content h2 {
+        font-size: 25px;
+    }
+
+    .cinematic-content-block h2 {
+        font-size: 22px;
+    }
+
+    .spec-dark-price-info h2 {
+        font-size: 24px;
+    }
+    .dark-price-value {
+        font-size: 21px;
+    }
+    .ov-dark-price {
+        font-size: 20px;
+    }
+    .tab-dark-panel {
+        padding: 22px 16px;
+    }
+
+    .shortcut-header h2 {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .shortcut-header h3 {
+        font-size: 20px;
+    }
+
+    .footer-breadcrumb {
+        font-size: 10px;
+        margin-bottom: 32px;
+    }
+    .sitemap-column h4 {
+        margin-bottom: 18px;
+    }
+    .bottom-legal-links a,
+    .bottom-copyright {
+        font-size: 10px;
+    }
+
+    .consult-process-header h2 {
+        font-size: 20px;
+    }
+}
+/* end 450px */
+
+
+/*  356px */
+@media (max-width: 356px) {
+    .nav-container {
+        padding: 8px 14px;
+        height: 60px;
+    }
+    .Navbar_logo-container__KEkjA {
+        width: 44px;
+    }
+    .hamburger {
+        width: 38px;
+        height: 38px;
+        padding: 0 8px;
+    }
+    .nav-menu {
+        width: 100%;
+        padding: 82px 20px 24px;
+    }
+    section[id] {
+        scroll-margin-top: 60px;
+    }
+
+    .hero-section {
+        height: calc(100vh - 60px);
+        height: calc(100dvh - 60px);
+        min-height: 400px;
+    }
+    .hero-content {
+        padding: 0 14px;
+    }
+    .hero-content h1 {
+        font-size: 19px;
+        letter-spacing: 0.5px;
+    }
+    .hero-content p {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        margin-bottom: 22px;
+    }
+    .btn-discover {
+        padding: 10px 18px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    .audio-btn {
+        bottom: 14px;
+        right: 14px;
+        padding: 7px 11px;
+        font-size: 13px;
+    }
+
+    .about-layered {
+        padding: 42px 14px;
+    }
+    .layered-tag {
+        font-size: 15px;
+    }
+    .layered-content h2 {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+    .layered-content p,
+    .layered-content .desc-2 {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+    .circle-mask {
+        width: 190px;
+        height: 190px;
+    }
+
+    .split-panel {
+        min-height: 52vh;
+        padding: 26px 16px;
+    }
+    .panel-content h2 {
+        font-size: 21px;
+    }
+    .panel-content p {
+        font-size: 12px;
+    }
+    .btn-panel-explore {
+        padding: 9px 18px;
+        font-size: 11px;
+    }
+
+    .innovations-cinematic {
+        padding: 50px 16px 55px;
+    }
+    .cinematic-content-block h2 {
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        margin-bottom: 16px;
+    }
+    .cinematic-text-flow p,
+    .cinematic-text-flow .cinematic-sub {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .nissan-spec-dark-section {
+        padding: 45px 14px;
+    }
+    .spec-dark-price-info h2 {
+        font-size: 21px;
+    }
+    .dark-price-value {
+        font-size: 18px;
+    }
+    .dark-price-note,
+    .dark-img-note {
+        font-size: 10px;
+    }
+    .ov-dark-price {
+        font-size: 18px;
+    }
+    .spec-dark-tabs-nav {
+        margin-bottom: 22px;
+    }
+    .tab-dark-btn {
+        padding: 13px 2px;
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+    .tab-dark-panel {
+        padding: 18px 14px;
+    }
+    .spec-dark-quick-equipment li,
+    .ov-dark-middle li {
+        font-size: 12px;
+    }
+    .engine-dark-badge {
+        gap: 10px;
+        padding: 12px;
+    }
+    .badge-dark-icon {
+        font-size: 17px;
+    }
+    .badge-dark-text {
+        font-size: 12px;
+    }
+    .table-dark-row {
+        font-size: 12px;
+    }
+
+    .action-shortcuts-section {
+        padding: 45px 14px;
+    }
+    .shortcut-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .shortcut-header h2 {
+        font-size: 14px;
+    }
+    .shortcut-header h3 {
+        font-size: 18px;
+    }
+    .shortcut-item span {
+        font-size: 11px;
+    }
+
+    .main-corporate-footer {
+        padding: 36px 14px 22px;
+    }
+    .footer-sitemap-grid {
+        gap: 26px;
+        padding-bottom: 32px;
+    }
+    .sitemap-column h4 {
+        font-size: 11px;
+    }
+    .bottom-legal-links {
+        gap: 12px;
+    }
+    .bottom-legal-links a,
+    .bottom-copyright {
+        font-size: 10px;
+    }
+
+    .purchase-consult-section {
+        padding: 40px 14px;
+    }
+    .consult-process-header h2 {
+        font-size: 18px;
+    }
+    .btn-submit-consult {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+/* end  356px */
+
